@@ -16,6 +16,7 @@ The Kalman filter is also used for __predicting__ the likely future courses of d
 such as the flow of rivers during flood, the trajectories of celestial bodies, or the prices of traded commodities and securities. 
 
 It is not a physical tool, but a mathematical one.  
-_1. It is only a mathematical tool. It is important to understand its use and function. _
+_1. It is only a mathematical tool. It is important to understand its use and function._  
+
 
 
