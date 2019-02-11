@@ -32,3 +32,34 @@ It might seem strange that the term filter would apply to an estimator.
   > _These variables of interest are also allowed to be dynamic, with dynamics that are only partially predictable._
   
 #### 3 Its Mathematical Foundations
+![Foundational concepts in Kalman filtering](https://github.com/workspedia/Kalman/blob/master/Foundational%20concepts%20in%20Kalman%20filtering.PNG)
+#### 4 What It Is Used for
+The applications of Kalman filtering encompass many fields, but its use as a tool is almost exclusively for two purposes:   
+__estimation__ and __performance analysis__ of estimators.  
+- Estimating the State of Dynamic Systems.
+  > _Nearly all physical systems are dynamic to some degree._
+  > _If one wants very precise estimates of their characteristics over time, then one has to take their dynamics into consideration._
+  > _The problem is that one does not always know their dynamics very precisely either. _
+  > _Given this state of partial ignorance, the best one can do is expressing our ignorance more precisely—using probabilities._ 
+  > _The Kalman filter allows us to estimate the state of dynamic systems with certain types of random behavior by using such statistical information. 
+
+  
+  
+| Application      | Dynamic System | Sensor Types   |  
+|      -----       |     ------     |     ------     |  
+| Process control  | Chemical plant | Pressure       |
+|                  |                | Gas analyzer   |
+| Flood prediction | River system   | Water level    |
+|                  |                | Weather radar  |
+| Tracking         | Spacecraft     | Radar          |
+|                  |                | Imaging system |
+| Navigation       | Ship           | Sextant        |
+|                  |                | Accelerometer  |
+|                  |                | GNSSa receiver |
+
+The Global Positioning System (GPS),   
+  > _a satellite-based radionavigation system owned by the __United States__ government and operated by the United States Air Force._  
+  
+A satellite navigation system with global coverage may be termed a global navigation satellite system (GNSS).   
+  > _As of October 2018, the United States' Global Positioning System (GPS) and Russia's GLONASS are fully operational GNSSs, with China's BeiDou Navigation Satellite System (BDS) and the European Union's Galileo scheduled to be fully operational by 2020._
+
