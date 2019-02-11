@@ -1,5 +1,5 @@
 #### 1 On Kalman Filtering
-##### 1 First of All: What Is a Kalman Filter?
+##### (1) First of All: What Is a Kalman Filter?
 It has been called 
   - the linear least mean squares estimator (LLSME) 
     - because it minimizes the mean-squared estimation error for a linear stochastic system using noisy linear sensors
@@ -20,7 +20,7 @@ _1. It is only a mathematical tool. It is important to understand its use and fu
 _2. It is a computer program._
 _3. It is a consistent statistical characterization of an estimation problem._
 
-#### 2 How It Came to Be Called a Filter  
+##### (2) How It Came to Be Called a Filter  
 It might seem strange that the term filter would apply to an estimator.  
 - More commonly, a filter is a physical __device__ for __removing unwanted fractions of mixtures__.  
 - In the era of crystal radios and vacuum tubes, the term was applied to analog circuits that __“filter” electronic signals__.
@@ -31,9 +31,9 @@ It might seem strange that the term filter would apply to an estimator.
   > _In essence, it inverts this functional relationship and estimates the independent variables as inverted functions of the dependent (measurable) variables._  
   > _These variables of interest are also allowed to be dynamic, with dynamics that are only partially predictable._
   
-#### 3 Its Mathematical Foundations
+##### (3) Its Mathematical Foundations
 ![Foundational concepts in Kalman filtering](https://github.com/workspedia/Kalman/blob/master/Foundational%20concepts%20in%20Kalman%20filtering.PNG)
-#### 4 What It Is Used for
+##### (4) What It Is Used for
 The applications of Kalman filtering encompass many fields, but its use as a tool is almost exclusively for two purposes:   
 __estimation__ and __performance analysis__ of estimators.  
 - Estimating the State of Dynamic Systems.
@@ -42,9 +42,6 @@ __estimation__ and __performance analysis__ of estimators.
   > _The problem is that one does not always know their dynamics very precisely either. _
   > _Given this state of partial ignorance, the best one can do is expressing our ignorance more precisely—using probabilities._ 
   > _The Kalman filter allows us to estimate the state of dynamic systems with certain types of random behavior by using such statistical information. 
-
-  
-  
 | Application      | Dynamic System | Sensor Types   |  
 |      -----       |     ------     |     ------     |  
 | Process control  | Chemical plant | Pressure       |
@@ -62,4 +59,18 @@ The Global Positioning System (GPS),
   
 A satellite navigation system with global coverage may be termed a global navigation satellite system (GNSS).   
   > _As of October 2018, the United States' Global Positioning System (GPS) and Russia's GLONASS are fully operational GNSSs, with China's BeiDou Navigation Satellite System (BDS) and the European Union's Galileo scheduled to be fully operational by 2020._
+- Performance Analysis of Estimation Systems.
+The Kalman filter uses a parametric characterization of the probability distribution of its estimation errors in determining the optimal filtering gains, and these parameters may be used in assessing its performance as a function of the “design parameters” of an estimation system, such as
+#### 2 On Optimal Estimation Methods
+##### (1) Beginnings of Optimal Estimation Theory
+The first method for forming an optimal estimate from noisy data is the method of __least squares__. 
+The __inevitability of measurement errors__ had been recognized since the time of Galileo.
+It was the first optimal estimation method, and it provided an important connection between the experimental and theoretical sciences: _it gave experimentalists a practical method for estimating the unknown parameters of theoretical models_.
+##### (2) Method of Least Squares
+Gauss discovered that if he wrote a system of equations in matrix form, as  
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\tiny&space;Hx&space;=&space;z" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\tiny&space;Hx&space;=&space;z" title="\tiny Hx = z" /></a>
 
+then he could consider the problem of solving for that value of an estimate x̂ (pronounced
+“x-hat”) that minimizes the “estimated measurement error” Hx̂ − z. He could
+characterize that estimation error in terms of its Euclidean vector norm |Hx̂ − z|, or,
+equivalently, its square:
