@@ -42,6 +42,7 @@ __estimation__ and __performance analysis__ of estimators.
   > _The problem is that one does not always know their dynamics very precisely either. _
   > _Given this state of partial ignorance, the best one can do is expressing our ignorance more precisely—using probabilities._ 
   > _The Kalman filter allows us to estimate the state of dynamic systems with certain types of random behavior by using such statistical information. 
+  
 | Application      | Dynamic System | Sensor Types   |  
 |      -----       |     ------     |     ------     |  
 | Process control  | Chemical plant | Pressure       |
@@ -66,11 +67,22 @@ The Kalman filter uses a parametric characterization of the probability distribu
 The first method for forming an optimal estimate from noisy data is the method of __least squares__. 
 The __inevitability of measurement errors__ had been recognized since the time of Galileo.
 It was the first optimal estimation method, and it provided an important connection between the experimental and theoretical sciences: _it gave experimentalists a practical method for estimating the unknown parameters of theoretical models_.
+_In the meantime, the method of least squares had been discovered independently and published by Andrien-Marie in France and Robert Adrian in the United States. Such Jungian synchronicity (i.e., the phenomenon of multiple, near-simultaneous discovery) was to be repeated for other breakthroughs in estimation theory, as well—for the Wiener–Kolmogorov filter and the Kalman filter._  
 ##### (2) Method of Least Squares
-Gauss discovered that if he wrote a system of equations in matrix form, as  
-<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\tiny&space;Hx&space;=&space;z" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\tiny&space;Hx&space;=&space;z" title="\tiny Hx = z" /></a>
+Gauss discovered that if he wrote a system of equations in matrix form, as  Hx = z , then he could consider the problem of solving for that value of an estimate x̂ (pronounced “x-hat”) that minimizes the “estimated measurement error” Hx̂ − z. 
+He could characterize that estimation error in terms of its Euclidean vector norm |Hx̂ − z|, or, equivalently, its square.
+Consequently, it will achieve its minimum value where all its derivatives with respect to the x̂k are zero.  
+For the examples considered above, observability does not depend upon the measurable data (z). It depends only on the nonsingularity of the Gramian matrix, which depends only on the linear constraint matrix (H) between the unknowns and knowns.  
+Observability of a set of unknown variables is the issue of whether or not their values are uniquely determinable from a given set of constraints, expressed as equations involving functions of the unknown variables.   
+##### (3) Mathematical Modeling of Uncertainty
+Probabilities represent the state of knowledge about physical phenomena by providing something more useful than “I don’t know” to questions involving uncertainty.
+- The Italian Cardano performed an accurate analysis of probabilities for games involving dice. He assumed that successive tosses of the dice were statistically independent events. 
+  > Cardano stated without proof that the accuracies of empirical statistics tend to improve with the number of trials. This would later be formalized as a Law of Large Numbers.
+- More general treatments of probabilities were developed by Blaise Pascal, Pierre de Fermat , and Christiaan Huygens.
+  > Fermat’s work on combinations was taken up by Bernoulli, who is considered by some historians to be the founder of probability theory. He gave the first rigorous proof of the Law of Large Numbers for repeated independent trials (now called Bernoulli trials). 
+  >Bayes derived his famous rule for statistical inference sometime after Bernoulli.
+- Abraham de Moivre, Laplace, and Gauss continued this development into the nineteenth century.
+  > The idea that the laws of nature embrace random phenomena and that these are treatable by probabilistic models began to emerge in the nineteenth century. The development and application of probabilistic models for the physical world expanded rapidly in that period.
+  > The work of James Clerk Maxwell (1831–1879) in statistical mechanics established the probabilistic treatment of natural phenomena as a scientific (and successful) discipline. 
 
-then he could consider the problem of solving for that value of an estimate x̂ (pronounced
-“x-hat”) that minimizes the “estimated measurement error” Hx̂ − z. He could
-characterize that estimation error in terms of its Euclidean vector norm |Hx̂ − z|, or,
-equivalently, its square:
+  > Andrei Andreyevich Markov (1856–1922) would develop much of the theory of what is today called a Markov process (in continuous time) or Markov chain (in discrete time), a random process with the property that the evolution over time of its probability distribution can be treated as an initial-value problem. 
