@@ -79,10 +79,45 @@ Probabilities represent the state of knowledge about physical phenomena by provi
 - The Italian Cardano performed an accurate analysis of probabilities for games involving dice. He assumed that successive tosses of the dice were statistically independent events. 
   > Cardano stated without proof that the accuracies of empirical statistics tend to improve with the number of trials. This would later be formalized as a Law of Large Numbers.
 - More general treatments of probabilities were developed by Blaise Pascal, Pierre de Fermat , and Christiaan Huygens.
-  > Fermat’s work on combinations was taken up by Bernoulli, who is considered by some historians to be the founder of probability theory. He gave the first rigorous proof of the Law of Large Numbers for repeated independent trials (now called Bernoulli trials). 
-  >Bayes derived his famous rule for statistical inference sometime after Bernoulli.
+  - Fermat’s work on combinations was taken up by Bernoulli, who is considered by some historians to be the founder of probability theory. He gave the first rigorous proof of the Law of Large Numbers for repeated independent trials (now called Bernoulli trials). 
+  - Bayes derived his famous rule for statistical inference sometime after Bernoulli.
 - Abraham de Moivre, Laplace, and Gauss continued this development into the nineteenth century.
-  > The idea that the laws of nature embrace random phenomena and that these are treatable by probabilistic models began to emerge in the nineteenth century. The development and application of probabilistic models for the physical world expanded rapidly in that period.
-  > The work of James Clerk Maxwell (1831–1879) in statistical mechanics established the probabilistic treatment of natural phenomena as a scientific (and successful) discipline. 
+  - The idea that the laws of nature embrace random phenomena and that these are treatable by probabilistic models began to emerge in the nineteenth century. The development and application of probabilistic models for the physical world expanded rapidly in that period.
+  - The work of James Clerk Maxwell (1831–1879) in statistical mechanics established the probabilistic treatment of natural phenomena as a scientific (and successful) discipline.  
+  - Andrei Andreyevich Markov (1856–1922) would develop much of the theory of what is today called a Markov process (in continuous time) or Markov chain (in discrete time), a random process with the property that the evolution over time of its probability distribution can be treated as an initial-value problem. 
+    - That is, the instantaneous variation with time of the probability distribution of possible states of the process is determined by the current distribution, which includes the effects of all past history of the process.  
+- An important figure in probability theory and the theory of random processes in the twentieth century was the Russian academician Andrei Nikolayevich Kolmogorov (1903–1987). 
+  - Starting around 1925, working with Aleksandr Yakovlevich Khinchin and others, he reestablished the foundations of probability theory on measure theory, which had originated as the basis for integration theory and became the accepted mathematical basis of probability and random processes. 
+  - Along with Norbert Wiener, he is credited with founding much of the theory of prediction, smoothing and filtering of Markov processes, and the general theory of ergodic processes. 
+  - His theory was the first formal theory of optimal estimation for systems involving random processes.
+##### (4) The Wiener–Kolmogorov Filter
+In the popular scientific press, Wiener is probably more famous for naming and promoting cybernetics than for developing the Wiener–Kolmogorov filter.
+Some of his greatest mathematical achievements were in generalized harmonic analysis, in which he extended the Fourier transform to functions of finite power. 
+Previous results were restricted to functions of finite energy, which is an unreasonable constraint for signals on the real line. 
+Another of his many achievements involving the generalized Fourier transform was proving that the transform of white noise is also white noise.
+In his derivation of an optimal estimator, Wiener would use probability measures on function spaces to represent uncertain dynamics. 
+He derived the solution for the least-mean-squared prediction error in terms of the autocorrelation functions of the signal and the noise. 
+The solution is in the form of an integral operator that can be synthesized with analog circuits, given certain constraints on the regularity of the autocorrelation functions or, equivalently, their Fourier transforms.
+##### (5) The Kalman Filter
+- Discovery
+  - In 1958, Why not apply the notion of state variables to the Wiener–Kolmogorov filtering problem. The Kalman filter is the culmination of a progression of models and associated optimal estimation methods for dynamic processes.
+  - Wiener–Kolmogorov models use the PSD in the frequency domain to characterize the dynamic and statistical properties of a dynamic process. Optimal Wiener–Kolmogorov estimators are derivable from the PSD, which can be estimated from measured system outputs. This assumes the dynamic process model is time invariant.
+  - Control theorists use linear differential equations as dynamic system models.This led to the development of mixed models, in which the dynamic system functions as a “shaping filter” excited by white noise. Coefficients of the linear differential equations determine the shape of the output PSD, and the shape of the PSD defines the Wiener–Kolmogorov estimator. This approach allows the dynamic system model to be time varying. These linear differential equations can be modeled as a system of first-order differential equations in what has come to be called state space.
+   -The next step in this progression would be to develop the equivalent estimation methods right from a time-varying state space model—and that is what Kalman did.One of the more remarkable achievements of Kalman and Bucy in that period was proving that the Riccati equation can have a stable (steady-state) solution even if the dynamic system is unstable provided that the system is observable and controllable.With the additional assumption of finite dimensionality, Kalman was able to derive the Wiener–Kolmogorov filter as what we now call the Kalman filter. 
+The Kalman filter solved the data fusion problem associated with combining radar data with inertial sensor data to arrive at an overall estimate of the aircraft trajectory and the data rejection problem associated with detecting exogenous errors in measurement data. It has been an integral part of nearly every onboard trajectory estimation and control system designed since that time.
+  - Impact of Kalman Filtering on Technology From the standpoint of those involved in estimation and control problems, at least, this has to be considered the greatest achievement in estimation theory of the twentieth century. The principal uses of Kalman filtering have been in “modern” control systems, in the tracking and navigation of all sorts of vehicles, and in predictive design of estimation and control systems. These technical activities were made possible by the introduction of the Kalman filter.  
+######  Relative Advantages of Kalman and Wiener–Kolmogorov Filtering
+1. The Wiener–Kolmogorov filter implementation in analog electronics can operate at much higher effective throughput than the (digital) Kalman filter.
 
-  > Andrei Andreyevich Markov (1856–1922) would develop much of the theory of what is today called a Markov process (in continuous time) or Markov chain (in discrete time), a random process with the property that the evolution over time of its probability distribution can be treated as an initial-value problem. 
+2. The Kalman filter is implementable in the form of an algorithm for a digital computer, which was replacing analog circuitry for estimation and control at the time when the Kalman filter was introduced. This implementation may be slower, but it is capable of much greater accuracy than had been achievable with analog filters.
+
+3. The Wiener–Kolmogorov filter does not require finite dimensional stochastic process models for the signal and noise.
+
+4. The Kalman filter does not require that the deterministic dynamics or the random processes have stationary properties, and many applications of importance include nonstationary stochastic processes.
+
+5. The Kalman filter is compatible with the state-space formulation of optimal controllers for dynamic systems, and Kalman was able to prove useful dual properties of estimation and control for these systems.
+
+6. For the modern controls engineering student, the Kalman filter requires less additional mathematical preparation to learn and use than the Wiener–Kolmogorov filter. As a result, the Kalman filter can be taught at the undergraduate level in engineering curricula.
+
+7. The Kalman filter provides the necessary information for mathematically sound, statistically based decision methods for detecting and rejecting anomalous measurements
+##### (6) Implementation Methods
