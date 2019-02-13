@@ -121,3 +121,46 @@ The Kalman filter solved the data fusion problem associated with combining radar
 
 7. The Kalman filter provides the necessary information for mathematically sound, statistically based decision methods for detecting and rejecting anomalous measurements
 ##### (6) Implementation Methods
+##### (7) Nonlinear Approximations
+Those experienced with Kalman filtering often find themselves morphing problems to resemble the Kalman filtering model.
+
+This is especially so with nonlinear problems, for which there is no practical and mathematically correct approach comparable to the Kalman filter. 
+
+Although it was originally derived for linear problems, the Kalman filter is habitually applied to nonlinear problems by using various approximation methods. This approach has worked remarkably well for a number of nonlinear problems, but there will always be limits to how far it can be pushed.
+
+We mention here some approaches that have been used to extend the applicability of Kalman filtering methodologies to nonlinearly problems. 
+
+
+###### Extended Kalman Filtering (EKF) for Quasilinear Problems 
+EKF was used in the very first application of Kalman filtering: the space navigation problem for the Apollo missions to the moon and back. 
+_The name refers to the Monaco Monte Carlo gambling casino, which uses pseudorandom methods to transform the distribution of wealth among its players._
+##### (8) Truly Nonlinear Estimation
+Problems involving nonlinear and random dynamic systems have been studied for some time in statistical mechanics.   
+##### (9) The Detection Problem for Surveillance
+Surveillance problems include the detection, identification, and tracking of objects within a certain region of space. 
+However, the detection problem must usually be solved before identification and tracking can begin. The Kalman filter requires an initial state estimate for each object, and that initial estimate must be obtained by detecting it. 
+Those initial states are distributed according to some “point process,” but there are no technically mature methods (comparable to the Kalman filter) for estimating the state of a point process.
+#### 4 Common Notation
+> _The fundamental problem of symbolic notation, in almost any context, is that there are never enough symbols to go around. There are not enough letters in the Roman alphabet to represent the basic phonetic elements of standard spoken English, let alone all the variables in Kalman filtering and its applications. As a result, some symbols must play multiple roles. In such cases, their roles will be defined as they are introduced. It is sometimes confusing but unavoidable._  
+##### (1) “Dot” Notation for Derivatives
+Newton’s notation using ̇f(t), ̈f(t) for the first two derivatives of f with respect to t is used where convenient to save ink.
+##### (2) Standard Symbols for Kalman Filter Variables
+There appear to be two “standard” conventions in technical publications for the symbols used in Kalman filtering. 
+- The one used in this book is similar to the original notation of Kalman. 
+- The other standard notation is sometimes associated with applications of Kalman filtering in control theory.
+- The state vector wears a “hat” as the estimated value, x̂, and subscripting to denote the sequence of values that the estimate assumes over time. The problem is that it has two values at the same time: the a prior value (before the measurement at the current time has been used in refining the estimate) and the a posteriori value (after the current measurement has been used in refining the estimate). These distinctions are indicated by the signum.  The negative sign (−) indicates the a priori value, and the positive sign (+) indicates the a posteriori value. 
+##### (3) Common Notation for Array Dimensions  
+#### Summary
+The Kalman filter is an estimator used to estimate the state of a linear dynamic system perturbed by white noise using measurements that are linear functions of the system state but corrupted by additive white noise. 
+
+The Kalman filter was derived as the solution to the Wiener filtering problem using the state-space model for dynamic and random processes. 
+
+The result is easier to derive (and to use) than the Wiener–Kolmogorov filter. 
+
+Square-root filtering is a reformulation of the Kalman filter for better numerical stability in finite-precision arithmetic. 
+
+Sequential Monte Carlo methods and particle filtering can be used to extend Kalman filtering beyond the quasilinear estimation problems that are solvable by extended Kalman filtering.
+
+The Unscented Kalman Filter has about the same computational complexity as the extended Kalman filter and essentially the same numerical stability as square-root filtering but with potentially greater robustness against nonlinear effects.
+
+
