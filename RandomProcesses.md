@@ -53,4 +53,12 @@ G(t) is an n × r time-varying process noise coupling matrix,
 ##### (2) Discrete-Time Models for Random Sequences (RS)
 RPs in discrete time are also called random sequences. A vector-valued discrete-time recursive equation for modeling an RS with initial conditions can be given in the form  
 ##### (3) Autoregressive Processes and Linear Predictive Models  
-6 MEAN AND COVARIANCE PROPAGATION
+#### 5 Shaping Filters And State Augmentation
+The focus of this section is on the use of shaping filters to model nonwhite-noise models for stationary RPs, using white-noise processes as inputs. It can be useful to generate an autocorrelation function or PSD from real data and then develop an appropriate noise model using differential or difference equations.  
+##### (1) Correlated Process Noise Models  
+##### (2) Correlated Measurement Noise Models  
+#### 7 Relationships Between Model Parameters  
+#### 8 Orthogonality Principle  
+
+#### 6 Mean And Covariance Propagation  
+
