@@ -27,6 +27,12 @@ There are three general types of estimators for the LQ problem:
 The optimal linear estimate is equivalent to the general (nonlinear) optimal estimator if the variates x and z are jointly Gaussian.  
 Therefore, it suffices to seek an updated estimate x̂k(+)—based on the observation zk—that is a linear function of the a priori estimate and the measurement z.x̂k(+) = K1k x̂k(−) + Kkzk, (5.7)where x̂k(−) is the a priori estimate of xk and x̂k(+) is the a posteriori value of the estimate.  
 ##### (3) Solving for the Kalman Gain  
-##### (4) Kalman Gain from Gaussian Maximum Likelihood
-  
+##### (4) Kalman Gain from Gaussian Maximum Likelihood  
+##### (5) Kalman Gain from Recursive Linear LMS Estimator
+This is another low stress derivation of the Kalman gain, starting from the linear LMS estimator in recursive form. It makes fewer assumptions than the derivation from Gaussian ML estimation and uses just a bit of matrix arithmetic.  
+##### (6) Summary of Equations for the Discrete-Time Kalman Estimator  
+#### 3 Kalman–Bucy Filter  
+#### 4 Optimal Linear Predictors  
+
+#### 6 Relation between  Kalman Filter and Wiener Filter
 
