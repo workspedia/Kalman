@@ -1,0 +1,1 @@
+The unscented transform (UT) is a mathematical function used to estimate the result of applying a given nonlinear transformation to a probability distribution that is characterized only in terms of a finite set of statistics. 
